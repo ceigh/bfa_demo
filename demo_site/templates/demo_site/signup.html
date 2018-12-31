@@ -1,5 +1,15 @@
 {% extends 'demo_site/wrapper.html' %}
 {% block title %}Sign up{% endblock %}
 {% block content %}
-
+    <h2>Here you can sign up</h2>
+    <p>Fill field:</p>
+    <form method="post">
+        {% csrf_token %}
+        <input name="username" placeholder="Username">
+        {{ fp_field|safe }}
+        <button type="submit">Submit</button>
+    </form>
+    {% for error in errors %}
+        <p>ERROR: {{ error }}</p>
+    {% endfor %}
 {% endblock %}
