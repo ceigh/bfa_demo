@@ -1,0 +1,13 @@
+#container {
+    height: 90vh;
+    margin: 0;
+}
+#content {
+    transform: scale(1.4);
+}
+input {
+    padding-top: 20px !important;
+}
+.error {
+    margin-top: 20px !important;
+}

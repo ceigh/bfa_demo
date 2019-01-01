@@ -1,0 +1,15 @@
+{% extends 'demo_site/wrapper.html' %}
+{% block title %}Login{% endblock %}
+{% block header %}Login{% endblock %}
+{% block p %}Just enter your username:{% endblock %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <input required type="text" name="username" placeholder="Username">
+        {{ fp_field|safe }}
+        <button class="btn--raised" type="submit">Submit</button>
+    </form>
+    {% for error in errors %}
+        <p class="color--alizarin error">{{ error }}</p>
+    {% endfor %}
+{% endblock %}

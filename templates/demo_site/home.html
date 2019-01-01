@@ -1,0 +1,17 @@
+{% extends 'demo_site/wrapper.html' %}
+{% block title %}Test BFA{% endblock %}
+{% block header %}BFA testing page{% endblock %}
+{% block content %}
+    <p>Try
+        <a title="Browser Fingerprint Authentication"
+           href="https://gitlab.com/bfa">BFA</a>
+        now and see how fast and easy it is!</p>
+    {% if request.user.is_authenticated %}
+        <h4 class="color--green-sea">
+            Hi, {{ request.user.username }}!</h4>
+        <a href="logout"><button class="btn--raised btn--red">Log out</button></a>
+    {% else %}
+        <a href="signup"><button class="btn--raised btn--primary">Sign up</button></a>
+        <a href="login"><button class="btn--raised">Log in</button></a>
+    {% endif %}
+{% endblock %}
